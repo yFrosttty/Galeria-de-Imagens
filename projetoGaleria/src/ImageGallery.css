@@ -4,7 +4,8 @@
     grid-template-columns: repeat(3, 1fr); /* 3 colunas */
     gap: 20px; /* Espaçamento entre as imagens */
     padding: 20px; /* Espaçamento interno */
-    justify-items: center; /* Centraliza os itens horizontalmente */
+    max-width: 1200px; /* Largura máxima do grid */
+    margin: 0 auto; /* Centraliza o grid horizontalmente */
 }
 
 .image-item {
