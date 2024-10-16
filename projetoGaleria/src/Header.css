@@ -1,0 +1,39 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Ajustando o padding */
+    background-color: red; /* Cor de fundo vermelha */
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Fixa no topo da página */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.logo img {
+    max-height: 60px; /* Ajuste a altura da logo conforme necessário */
+}
+
+.menu ul {
+    list-style-type: none; /* Remove marcadores */
+    display: flex;
+    gap: 15px; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que as opções quebrem para a próxima linha se necessário */
+}
+
+.menu a {
+    text-decoration: none; /* Remove sublinhado */
+    color: gray; /* Cor do texto em cinza */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.menu a:hover {
+    color: #fff; /* Cor ao passar o mouse (branco) */
+}
+
+/* Adicionando margem ao corpo para evitar sobreposição */
+body {
+    margin-top: 80px; /* Ajuste conforme a altura do header */
+}

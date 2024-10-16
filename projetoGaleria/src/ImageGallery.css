@@ -1,0 +1,36 @@
+/* ImageGallery.css */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaçamento entre as imagens */
+    padding: 20px; /* Espaçamento interno */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.image-item {
+    display: flex; /* Para centralizar a imagem dentro do item */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 200px; /* Altura fixa para manter o alinhamento */
+    width: 100%; /* Largura total do item */
+}
+
+.image-item img {
+    max-width: 100%; /* Garante que as imagens não excedam o contêiner */
+    height: auto; /* Mantém a proporção das imagens */
+    border-radius: 8px; /* Bordas arredondadas para as imagens */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave nas imagens */
+}
+
+/* Responsividade: Ajuste o número de colunas em telas menores */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+}
