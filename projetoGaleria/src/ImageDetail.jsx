@@ -1,11 +1,13 @@
-// ImageGallery.js
+// ImageDetail.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './ImageGallery.css';
+import { useParams } from 'react-router-dom';
+import './ImageDetail.css';
 
-const ImageGallery = () => {
+const ImageDetail = () => {
+    const { id } = useParams();
+
     const images = [
-        { id: 1, src: 'Mario.jpg', title: 'Imagem 1', description: 'Descrição da Imagem 1' },
+        { id: 1, src: 'caminho-da-imagem1.jpg', title: 'Imagem 1', description: 'Descrição da Imagem 1' },
         { id: 2, src: 'caminho-da-imagem2.jpg', title: 'Imagem 2', description: 'Descrição da Imagem 2' },
         { id: 3, src: 'caminho-da-imagem3.jpg', title: 'Imagem 3', description: 'Descrição da Imagem 3' },
         { id: 4, src: 'caminho-da-imagem4.jpg', title: 'Imagem 4', description: 'Descrição da Imagem 4' },
@@ -16,17 +18,19 @@ const ImageGallery = () => {
         { id: 9, src: 'caminho-da-imagem9.jpg', title: 'Imagem 9', description: 'Descrição da Imagem 9' }
     ];
 
+    const image = images.find(img => img.id === parseInt(id));
+
+    if (!image) {
+        return <div>Imagem não encontrada.</div>;
+    }
+
     return (
-        <div className="image-gallery">
-            {images.map((image) => (
-                <div key={image.id} className="image-item">
-                    <Link to={`/image/${image.id}`}>
-                        <img src={image.src} alt={image.title} />
-                    </Link>
-                </div>
-            ))}
+        <div className="image-detail">
+            <h1>{image.title}</h1>
+            <img src={image.src} alt={image.title} style={{ width: '100%', maxWidth: '600px' }} />
+            <p>{image.description}</p>
         </div>
     );
 };
 
-export default ImageGallery;
+export default ImageDetail;
